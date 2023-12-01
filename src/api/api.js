@@ -19,7 +19,6 @@ export async function getComments(callback) {
     });
 }
 
-
 export async function editComment(comment_id, text, callback) {
   const options = {
     method: "POST",
@@ -28,8 +27,8 @@ export async function editComment(comment_id, text, callback) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-        comment_id: comment_id,
-        text: text,
+      comment_id: comment_id,
+      text: text,
     }),
   };
 
@@ -49,62 +48,60 @@ export async function editComment(comment_id, text, callback) {
     });
 }
 
-
 export async function addComment(author, text, image, callback) {
-    const options = {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        author: author,
-        text: text,
-        image: image
-      }),
-    };
-  
-    fetch(API_URL + "/comments/add", options)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong ...");
-        }
-      })
-      .then((data) => {
-        callback(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      author: author,
+      text: text,
+      image: image,
+    }),
+  };
 
+  fetch(API_URL + "/comments/add", options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      callback(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
-  export async function deleteComment(comment_id, callback) {
-    const options = {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        comment_id: comment_id
-      }),
-    };
-  
-    fetch(API_URL + "/comments/delete", options)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong ...");
-        }
-      })
-      .then((data) => {
-        callback(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+export async function deleteComment(comment_id, callback) {
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      comment_id: comment_id,
+    }),
+  };
+
+  fetch(API_URL + "/comments/delete", options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      callback(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
