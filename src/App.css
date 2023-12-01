@@ -1,38 +1,167 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background-color: gray;
+}
+
+.mainBackground {
+  background-color: #1a1a1a;;
+  height: 75vh;
+  width: 50vw;
+  color: white; 
+  border-radius: 20px;
+}
+
+.label {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.chatCellHolder {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  height: calc(100% - 150px);
+  overflow-y: scroll;
+}
+
+.chatCellHolder::-webkit-scrollbar {
+  display: none;
+}
+
+.chatCell {
+  margin-bottom: 25px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.topItemsHolder {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 50px);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.profileImageHolder {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.name {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 600;
+  margin-top: auto;
+padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.rightItems {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.commentText {
+  background-color: transparent;
   color: white;
+  border: none;
+  font-size: 20px;
+  resize: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.commentTextHolder {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
 }
+
+.menu:hover {
+  cursor: pointer;
+  background-color: pink;
+  transition: background-color 1s;
+}
+
+.addComment {
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 20px;
+  outline: none; /* Remove the default focus outline */
+  position: relative;
+}
+
+.addComment:focus {
+  border: 1px solid red;
+}
+
+.addCommentText {
+  background-color: transparent;
+  color: white;
+  border: 1px solid gray;
+  font-size: 20px;
+  resize: none;
+  border-radius: 20px;
+  padding: 15px;
+  width: 100%; 
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-size: 20px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.addCommentText:focus {
+  outline: none;
+  border: 1px solid white;
+}
+
+.sendButton {
+  position: absolute;
+  right: 20px; 
+  top: 20px; 
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 7.5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sendButton:hover {
+  cursor: pointer;
+  background-color: gray;
+  transition: background-color 1s;
+}
+
+
