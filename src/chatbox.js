@@ -112,6 +112,15 @@ export default class ChatBox extends React.Component {
             onChange={(event) => {
               this.setNewComment(event.target.value);
             }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                this.addComment(
+                  "Admin",
+                  this.state.newComment,
+                  "https://www.w3schools.com/howto/img_avatar.png",
+                );
+              }
+            }}
           />
           <SendIcon
             onClick={() => {
