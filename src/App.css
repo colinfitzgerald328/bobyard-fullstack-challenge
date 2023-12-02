@@ -164,4 +164,12 @@
   transition: background-color 1s;
 }
 
+.date {
+  font-size: 14px;
+  margin-top: auto;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  color: gray;
+}
+
 iframe#webpack-dev-server-client-overlay{display:none!important}

@@ -68,6 +68,13 @@ export default class ChatBox extends React.Component {
     return url !== null && url !== undefined && url !== "";
   }
 
+  formatDate(date) {
+    const options = { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+    const currentDate = new Date(date);
+    const formattedDate = currentDate.toLocaleString('en-US', options);
+    return formattedDate;
+  }
+
   render() {
     const commentsMap = this.state.comments.map((comment) => {
       return (
@@ -77,6 +84,7 @@ export default class ChatBox extends React.Component {
               <img className="profileImage" src={this.checkUserHasImage(comment.image) ? comment.image : "https://www.solidbackgrounds.com/images/2560x1600/2560x1600-celestial-blue-solid-color-background.jpg"} alt="profile" />
             </div>
             <div className="name">{comment.author}</div>
+            <div className="date">{this.formatDate(comment.date)}</div>
             <div className="rightItems">
               <div
                 onClick={() => {
