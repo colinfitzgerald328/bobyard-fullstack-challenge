@@ -64,13 +64,17 @@ export default class ChatBox extends React.Component {
     this.setState({ newComment: text });
   }
 
+  checkUserHasImage(url) {
+    return url !== null && url !== undefined && url !== "";
+  }
+
   render() {
     const commentsMap = this.state.comments.map((comment) => {
       return (
         <div key={comment.id} className="chatCell">
           <div className="topItemsHolder">
             <div className="profileImageHolder">
-              <img className="profileImage" src={comment.image} alt="profile" />
+              <img className="profileImage" src={this.checkUserHasImage(comment.image) ? comment.image : "https://www.solidbackgrounds.com/images/2560x1600/2560x1600-celestial-blue-solid-color-background.jpg"} alt="profile" />
             </div>
             <div className="name">{comment.author}</div>
             <div className="rightItems">
