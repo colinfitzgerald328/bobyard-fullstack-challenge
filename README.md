@@ -1,58 +1,51 @@
-### Bobyard Full Stack Challenge - Comments 
+### Bobyard Full Stack Challenge - Colin FitzGerald
 
+### Setting up the Backend
 
+The Backend was built with PostgreSQL along with CockroachDB, SQLAlchemy, and Flask.
 
-### Setting up the backend 
+**Python Version**
 
-The Backend was written using PostgreSQL with CockroachDB, SQLAlchemy and Flask.
-
-**Python Environment**
-
-The local python environment I used to develop the project was 3.11.6. 
+The project was developed using Python 3.11.6.
 
 **CockroachDB Certificate**
 
-```
-curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cockroachlabs.cloud/clusters/11ff4534-2e25-454c-84dd-34546f9a248b/cert'
-```
+A CockroachDB certificate is required for SSL verification when connecting to the database. You can execute the following command to obtain the certificate:
 
-This will create a certificate that CockroachDB can then use to verify security via SSL when connecting to the database. 
-Once you have the certificate installed, you can navigate to the backend. 
+`curl --create-dirs -o $HOME/.postgresql/root.crt 'https://cockroachlabs.cloud/clusters/11ff4534-2e25-454c-84dd-34546f9a248b/cert'`
 
+Once the certificate is installed, navigate to the backend directory:
 
+`cd challenge-backend`
 
-**Navigate to the backend**
+**Backend Dependencies**
 
-```
-cd challenge-backend
-```
+Install the necessary dependencies by executing:
 
-The requirements to run the backend are in requirements.txt.
+`pip install -r requirements.txt`
 
-```
-pip install -r requirements.txt
-```
+If you encounter any challenges during this process, feel free to reach out to me! Additional information is also available at [https://github.com/cockroachdb/sqlalchemy-cockroachdb](https://github.com/cockroachdb/sqlalchemy-cockroachdb).
 
-If you're running into any issues with getting this set up, let me know or there is also more information at https://github.com/cockroachdb/sqlalchemy-cockroachdb
+After setting up the dependencies, initiate the backend server:
 
-Once you've gotten these dependencies set up, you can run the backend. 
+`python main.py`
 
+The server should be accessible at [http://127.0.0.1:8080](http://127.0.0.1:8080/).
 
+### Running the Frontend
 
-```
-python main.py 
-```
+#### `npm install`
 
-This should start the server on http://127.0.0.1:8080
+Install the required frontend dependencies with the following command:
 
-### Running the frontend 
+`npm install`
 
-### `npm install`
+#### `npm start`
 
-This will install all of the required dependencies. 
-### `npm start`
+Launch the application in development mode:
 
-This will run the app in development mode. 
+`npm start`
 
-Open [http://localhost:3000](http://localhost:3000/) where you can view it in your browser! 
+Access the application in your browser at [http://localhost:3000](http://localhost:3000/).
 
+If you need any further clarification or assistance, don't hesitate to reach out!
