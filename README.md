@@ -4,7 +4,7 @@
 
 The Backend was built with PostgreSQL along with CockroachDB, SQLAlchemy, and Flask.
 
-**Python Environment**
+**Python Version**
 
 The project was developed using Python 3.11.6.
 
