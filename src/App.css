@@ -165,7 +165,8 @@
 }
 
 .date {
-  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
   margin-top: auto;
   padding-left: 5px;
   padding-bottom: 5px;
