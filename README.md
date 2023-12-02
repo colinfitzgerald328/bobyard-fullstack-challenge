@@ -1,4 +1,4 @@
-### Bobyard Full Stack Challenge - Comments 
+### Bobyard Full Stack Challenge - Colin FitzGerald
 
 
 
