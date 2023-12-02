@@ -21,7 +21,7 @@ Base.metadata.bind = engine
 # Create a session factory
 Session = sessionmaker(bind=engine)
 
-def update_comment(new_text, comment_id):
+def update_comment(new_text: str, comment_id: str) -> bool:
     """
     Updates a comment with the given text.
     """
@@ -44,7 +44,7 @@ def update_comment(new_text, comment_id):
 
 
 
-def add_comment(author, text, image):
+def add_comment(author: str, text: str, image: str) -> bool:
   """
   Adds a new comment to the database.
   """
@@ -69,7 +69,7 @@ def add_comment(author, text, image):
       session.close()
 
 
-def delete_comment(comment_id):
+def delete_comment(comment_id: str) -> bool:
   """
   Deletes a comment from the database.
   """
@@ -97,7 +97,7 @@ def delete_comment(comment_id):
       session.close()
 
 
-def get_comments():
+def get_comments() -> list:
   """
   Returns all comments from the database.
   """
